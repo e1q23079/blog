@@ -1,7 +1,7 @@
 <template>
   <v-row>
 
-    <v-col cols="12" md="4">
+    <v-col>
       <v-card>
         <v-card-item>
           <v-card-title>タイトル</v-card-title>
