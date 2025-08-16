@@ -10,11 +10,13 @@ import Notfound from './components/Notfound.vue';
 
 import Login from './components/Login.vue';
 
+import Editer from './components/Editer.vue';
 
 const routes = [
     { path: '/', component: Blog },
     { path: '/about', component: About },
     { path: '/login', component: Login },
+    { path: '/editer/:id', component: Editer },
     { path: '/detail/:id', component: Detail },
     { path: '/:notFound(.*)', component: Notfound }
 ]
