@@ -11,10 +11,26 @@
         <v-app-bar-title class="title">Q23079's blog</v-app-bar-title>
 
 
-        <template v-slot:append>
-          <v-btn icon="mdi-dots-vertical" color="#FFFFFF"></v-btn>
-        </template>
 
+
+        <v-menu>
+
+         <template v-slot:activator="{ props }">
+            <v-btn icon="mdi-dots-vertical" variant="text" v-bind="props" color="#FFFFFF"></v-btn>
+          </template>
+
+          
+
+          <v-list>
+            <v-list-item>
+              <v-list-item-title>
+                <div role="button">ログイン</div>
+              </v-list-item-title>
+            </v-list-item>
+          </v-list>
+
+    
+        </v-menu>
 
       </v-app-bar>
 
