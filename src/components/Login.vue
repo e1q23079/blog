@@ -1,28 +1,27 @@
 <template>
     <div class="center">
-        <v-card class="mx-auto px-6 py-8" max-width="344">
+        <v-card class="mx-auto pa-12 pb-8" elevation="8" max-width="448" rounded="lg">
+
             <v-form v-model="form" @submit.prevent="onSubmit">
-                <!--
-                <v-text-field v-model="UserName" :readonly="loading" :rules="[required]" class="mb-2" label="UserName"
-                    clearable></v-text-field>
-                -->
-                <v-text-field v-model="UserName" :readonly="loading" class="mb-2" label="UserName"
-                    clearable></v-text-field>
 
-                <!--
-                <v-text-field v-model="password" :readonly="loading" :rules="[required]" label="Password"
-                    placeholder="Enter your password" clearable type="password"></v-text-field>
-                -->
+                <div class="text-subtitle-1 text-medium-emphasis">UserName</div>
 
-                <v-text-field v-model="password" :readonly="loading" label="Password" placeholder="Enter your password"
-                    clearable type="password"></v-text-field>
+                <v-text-field v-model="userName" density="compact" placeholder="Enter your UserName"
+                    prepend-inner-icon="mdi-email-outline" variant="outlined"></v-text-field>
 
-                <br>
+                <div class="text-subtitle-1 text-medium-emphasis d-flex align-center justify-space-between">
+                    Password
+                </div>
 
-                <v-btn :disabled="!form" :loading="loading" color="success" size="large" type="submit"
-                    variant="elevated" block>
+                <v-text-field v-model="password" :append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'"
+                    :type="visible ? 'text' : 'password'" density="compact" placeholder="Enter your password"
+                    prepend-inner-icon="mdi-lock-outline" variant="outlined"
+                    @click:append-inner="visible = !visible"></v-text-field>
+
+                <v-btn class="mb-8" color="green" size="large" variant="tonal" block type="submit">
                     Login
                 </v-btn>
+
             </v-form>
         </v-card>
     </div>
@@ -33,21 +32,15 @@
     import { ref } from 'vue'
 
     const form = ref(false)
-    const UserName = ref(null)
+    const userName = ref(null)
     const password = ref(null)
-    const loading = ref(false)
+
+    const visible = ref(false)
 
     function onSubmit() {
-        if (!form.value) return
-        loading.value = true
-        // setTimeout(() => (loading.value = false), 2000);
-        console.log(UserName.value, password.value)
+        console.log(userName.value, password.value)
     }
-    /*
-    function required(v) {
-        return !!v || '必須の項目です．'
-    }
-    */
+
 </script>
 
 
