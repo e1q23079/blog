@@ -2,11 +2,20 @@
     <div class="center">
         <v-card class="mx-auto px-6 py-8" max-width="344">
             <v-form v-model="form" @submit.prevent="onSubmit">
+                <!--
                 <v-text-field v-model="UserName" :readonly="loading" :rules="[required]" class="mb-2" label="UserName"
                     clearable></v-text-field>
+                -->
+                <v-text-field v-model="UserName" :readonly="loading" class="mb-2" label="UserName"
+                    clearable></v-text-field>
 
+                <!--
                 <v-text-field v-model="password" :readonly="loading" :rules="[required]" label="Password"
                     placeholder="Enter your password" clearable type="password"></v-text-field>
+                -->
+
+                <v-text-field v-model="password" :readonly="loading" label="Password" placeholder="Enter your password"
+                    clearable type="password"></v-text-field>
 
                 <br>
 
