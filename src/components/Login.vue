@@ -34,9 +34,11 @@
         // setTimeout(() => (loading.value = false), 2000);
         console.log(UserName.value, password.value)
     }
+    /*
     function required(v) {
         return !!v || '必須の項目です．'
     }
+    */
 </script>
 
 
