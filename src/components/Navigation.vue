@@ -35,7 +35,7 @@
     </v-app-bar>
 
     <v-navigation-drawer v-model="open">
-      <v-list-item title="Q23079's blog" subtitle="e1q23079"></v-list-item>
+      <v-list-item title="Q23079's blog" subtitle="未ログイン"></v-list-item>
       <v-divider></v-divider>
       <v-list-item link title="Top" to="/" @click="open = false"></v-list-item>
       <v-list-item link title="Portfolio" href="https://e1q23079.github.io/portfolio"
