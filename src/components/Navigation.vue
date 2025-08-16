@@ -1,49 +1,61 @@
 <template>
 
-    <v-layout>
-        
-        <v-app-bar color="#8ED973" density="compact" elevation="0">
+  <v-layout>
 
-        <template v-slot:prepend>
-          <v-app-bar-nav-icon color="#FFFFFF"></v-app-bar-nav-icon>
+    <v-app-bar color="#8ED973" density="compact" elevation="0">
+
+      <template v-slot:prepend>
+        <v-app-bar-nav-icon color="#FFFFFF" @click="open = !open"></v-app-bar-nav-icon>
+      </template>
+
+      <v-app-bar-title class="title">Q23079's blog</v-app-bar-title>
+
+
+
+
+      <v-menu>
+
+        <template v-slot:activator="{ props }">
+          <v-btn icon="mdi-dots-vertical" variant="text" v-bind="props" color="#FFFFFF"></v-btn>
         </template>
 
-        <v-app-bar-title class="title">Q23079's blog</v-app-bar-title>
 
 
+        <v-list>
+          <v-list-item>
+            <v-list-item-title>
+              <div role="button">ログイン</div>
+            </v-list-item-title>
+          </v-list-item>
+        </v-list>
 
 
-        <v-menu>
+      </v-menu>
 
-         <template v-slot:activator="{ props }">
-            <v-btn icon="mdi-dots-vertical" variant="text" v-bind="props" color="#FFFFFF"></v-btn>
-          </template>
+    </v-app-bar>
 
-          
+    <v-navigation-drawer v-model="open">
+      <v-list-item title="Q23079's blog" subtitle="e1q23079"></v-list-item>
+      <v-divider></v-divider>
+      <v-list-item link title="Top"></v-list-item>
+      <v-list-item link title="portfolio"></v-list-item>
+      <v-list-item link title="About"></v-list-item>
+    </v-navigation-drawer>
 
-          <v-list>
-            <v-list-item>
-              <v-list-item-title>
-                <div role="button">ログイン</div>
-              </v-list-item-title>
-            </v-list-item>
-          </v-list>
 
-    
-        </v-menu>
-
-      </v-app-bar>
-
-    </v-layout>
+  </v-layout>
 
 </template>
 
-<script>
+<script setup>
+  import { shallowRef } from 'vue'
+
+  const open = shallowRef(false)
 </script>
 
 <style scoped>
-.title{
+  .title {
     color: white;
     font-weight: bold;
-}
+  }
 </style>
