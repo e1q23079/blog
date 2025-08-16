@@ -8,9 +8,13 @@ import Detail from '@/components/Detail.vue'
 
 import Notfound from './components/Notfound.vue';
 
+import Login from './components/Login.vue';
+
+
 const routes = [
     { path: '/', component: Blog },
     { path: '/about', component: About },
+    { path: '/login', component: Login },
     { path: '/detail/:id', component: Detail },
     { path: '/:notFound(.*)', component: Notfound }
 ]
