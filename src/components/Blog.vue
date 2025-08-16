@@ -6,7 +6,7 @@
         <v-card-item>
           <v-card-title>タイトル</v-card-title>
 
-          <v-card-subtitle>投稿者：Q23079</v-card-subtitle>
+          <v-card-subtitle>投稿日：2025/08/16</v-card-subtitle>
         </v-card-item>
 
         <v-card-text>
