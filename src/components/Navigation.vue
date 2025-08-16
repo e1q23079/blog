@@ -22,7 +22,7 @@
 
 
         <v-list>
-          <v-list-item>
+          <v-list-item to="/login">
             <v-list-item-title>
               <div role="button">ログイン</div>
             </v-list-item-title>
