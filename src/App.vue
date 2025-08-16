@@ -1,8 +1,14 @@
 <template>
+  
+  <Navigation></Navigation>
+
   <v-app>
     <v-main>
-      <HelloWorld />
+      <Blog></Blog>
     </v-main>
+
+    <Footer></Footer>
+
   </v-app>
 </template>
 
