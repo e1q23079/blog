@@ -4,9 +4,12 @@ import Blog from '@/components/Blog.vue';
 
 import About from '@/components/About.vue';
 
+import Detail from '@/components/Detail.vue'
+
 const routes = [
     { path: '/', component: Blog },
-    { path: '/about', component: About }
+    { path: '/about', component: About },
+    { path: '/detail/:id', component: Detail }
 ]
 
 const router = createRouter({
