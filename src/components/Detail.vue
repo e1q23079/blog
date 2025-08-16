@@ -1,11 +1,11 @@
 <template>
     <v-card>
         <v-card-item>
-          <v-card-title>タイトル</v-card-title>
-          <v-card-subtitle>投稿日：2025/08/16</v-card-subtitle>
+          <v-card-title class="title">タイトル</v-card-title>
+          <v-card-subtitle class="date">投稿日：2025/08/16</v-card-subtitle>
         </v-card-item>
         <v-card-text>
-          <div v-html="marked(text)"></div>
+          <div class="detail" v-html="marked(text)"></div>
         </v-card-text>
       </v-card>
 </template>
@@ -29,4 +29,14 @@ const text = `
 </script>
 
 <style scoped>
+.title{
+    font-size: 2.3em;
+    font-weight: bold;
+}
+.date{
+    font-size: 1.0em;
+}
+.detail{
+    font-size: 1.3em;
+}
 </style>
