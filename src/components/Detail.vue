@@ -1,6 +1,13 @@
 <template>
-    <h1>記事:{{ detailId }}</h1>
-    <div v-html="marked(text)"></div>
+    <v-card>
+        <v-card-item>
+          <v-card-title>タイトル</v-card-title>
+          <v-card-subtitle>投稿日：2025/08/16</v-card-subtitle>
+        </v-card-item>
+        <v-card-text>
+          <div v-html="marked(text)"></div>
+        </v-card-text>
+      </v-card>
 </template>
 
 <script setup>
@@ -15,9 +22,8 @@ const text = `
 ## h2
 ### h3
 #### h4
-|a|b|
-|-|-|
-|1|2|
+本文を記載
+文章を入力している．
 `
 
 </script>
