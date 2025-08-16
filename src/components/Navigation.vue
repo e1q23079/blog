@@ -10,9 +10,11 @@
 
         <v-app-bar-title class="title">Q23079's blog</v-app-bar-title>
 
+
         <template v-slot:append>
           <v-btn icon="mdi-dots-vertical" color="#FFFFFF"></v-btn>
         </template>
+
 
       </v-app-bar>
 
