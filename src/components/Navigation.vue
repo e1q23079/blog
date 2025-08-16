@@ -2,11 +2,7 @@
 
     <v-layout>
         
-        <v-app-bar
-        color="#8ED973"
-        density="compact"
-        elevation="0"
-        >
+        <v-app-bar color="#8ED973" density="compact" elevation="0">
 
         <template v-slot:prepend>
           <v-app-bar-nav-icon color="#FFFFFF"></v-app-bar-nav-icon>

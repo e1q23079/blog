@@ -3,9 +3,11 @@
   <Navigation></Navigation>
 
   <v-app>
-    <v-main>
-      <Blog></Blog>
-    </v-main>
+    <div class="view">
+      <v-main>
+        <RouterView />
+      </v-main>
+    </div>
 
     <Footer></Footer>
 
@@ -13,5 +15,14 @@
 </template>
 
 <script setup lang="ts">
-  //
+import router from './router';
+
 </script>
+
+<style scoped>
+.view{
+  padding-top: 60px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+</style>
