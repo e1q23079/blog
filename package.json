@@ -13,6 +13,7 @@
   "dependencies": {
     "@fontsource/roboto": "5.2.6",
     "@mdi/font": "7.4.47",
+    "marked": "^16.1.2",
     "vue": "^3.5.17",
     "vue-router": "^4.5.1",
     "vuetify": "^3.9.1"
