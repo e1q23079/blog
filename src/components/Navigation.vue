@@ -37,9 +37,10 @@
     <v-navigation-drawer v-model="open">
       <v-list-item title="Q23079's blog" subtitle="e1q23079"></v-list-item>
       <v-divider></v-divider>
-      <v-list-item link title="Top" to="/"></v-list-item>
-      <v-list-item link title="Portfolio" href="https://e1q23079.github.io/portfolio"></v-list-item>
-      <v-list-item link title="About" to="/about"></v-list-item>
+      <v-list-item link title="Top" to="/" @click="open = false"></v-list-item>
+      <v-list-item link title="Portfolio" href="https://e1q23079.github.io/portfolio"
+        @click="open = false"></v-list-item>
+      <v-list-item link title="About" to="/about" @click="open = false"></v-list-item>
     </v-navigation-drawer>
 
 
@@ -49,6 +50,7 @@
 
 <script setup>
   import { shallowRef } from 'vue'
+  import { fa } from 'vuetify/locale';
 
   const open = shallowRef(false)
 </script>
