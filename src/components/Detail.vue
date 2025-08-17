@@ -110,5 +110,6 @@
 
   .detail {
     font-size: 1.3em;
+    padding: 10px;
   }
 </style>
