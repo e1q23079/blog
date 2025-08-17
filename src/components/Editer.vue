@@ -38,7 +38,7 @@
                     いいえ
                 </v-btn>
 
-                <v-btn @click="dialog2 = false">
+                <v-btn @click="cancel">
                     はい
                 </v-btn>
             </template>
@@ -73,6 +73,7 @@
 
     import { onMounted } from 'vue';
     import { supabase } from '../../utils/supabase';
+    import { fa } from 'vuetify/locale';
 
     const blog = ref([]);
 
@@ -105,15 +106,22 @@
         const todayText = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
         dialog.value = false;
 
-        /*
         const { data, error } = await supabase
             .from('blog')
             .insert([
-                { created_at: todayText, title: blog.title, text: blog.text },
+                { created_at: todayText, title: blog.value.title, text: blog.value.text },
             ])
             .select()
-        */
-        console.log(todayText, blog.value.title, blog.value.text);
+
+        window.location.href = '/';
+
+        console.log("送信");
+    }
+
+    const cancel = () => {
+        dialog.value = false;
+
+        router.push('/');
     }
 
     onMounted(() => {
