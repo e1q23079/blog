@@ -43,8 +43,30 @@
   const router = useRouter();
   const detailId = route.params.id;
 
+  const renderer = new marked.Renderer();
 
-  import { ref } from 'vue'
+  renderer.heading = function (text) {
+    if (text.depth == 1) {
+      return `<h1><span className='section' style='color:  #8ED973;'>|</span> ${text.text}</h1><hr>`
+    } else if (text.depth == 2) {
+      return `<h2><span className='section' style='color:  #8ED973;'>|</span> ${text.text}</h2>`
+    } else {
+      return `<h${text.depth}>${text.text}</h${text.depth}>`;
+    }
+  }
+
+  renderer.listitem = function (text) {
+    return `・${text.text}<br>`;
+  }
+
+  renderer.code = function (text) {
+    return `<code style='background-color: rgb(182, 224, 159);' > ${text.text}</code > `
+  }
+
+  marked.setOptions({ renderer });
+
+
+  import { ref, render } from 'vue'
 
   const dialog = ref(false);
 
@@ -111,4 +133,7 @@
     font-size: 1.3em;
     padding: 10px;
   }
+
+
+
 </style>
