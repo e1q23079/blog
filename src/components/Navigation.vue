@@ -32,7 +32,13 @@
               <div role="button">ログイン</div>
             </v-list-item-title>
           </v-list-item>
+          <v-list-item @click="signOut">
+            <v-list-item-title>
+              <div role="button">ログアウト</div>
+            </v-list-item-title>
+          </v-list-item>
         </v-list>
+
 
 
       </v-menu>
@@ -51,6 +57,17 @@
 
   </v-layout>
 
+  <v-dialog v-model="dialog" max-width="400" persistent>
+    <v-card prepend-icon="mdi-check" text="ログアウトしました．" title="情報">
+      <template v-slot:actions>
+        <v-spacer></v-spacer>
+        <v-btn to="/" @click="click">
+          閉じる
+        </v-btn>
+      </template>
+    </v-card>
+  </v-dialog>
+
 </template>
 
 <script setup>
@@ -60,18 +77,43 @@
 
   import { supabase } from '../../utils/supabase';
 
+  import { useRouter } from 'vue-router';
+
+  const router = useRouter();
+
+  const dialog = ref(false);
+
   const userName = ref("未ログイン");
 
   async function getUser() {
     const { data: data, error } = await supabase.auth.getUser();
-    userName.value = data['user']['email'];
+    if (data['user']) {
+      userName.value = data['user']['email'];
+    } else {
+      userName.value = "未ログイン";
+    }
+
   }
 
   onMounted(() => {
     getUser();
   })
 
-  const open = shallowRef(false)
+  const open = shallowRef(false);
+
+
+  async function signOut() {
+    const { error } = await supabase.auth.signOut();
+    dialog.value = true;
+  }
+
+  const click = () => {
+    dialog.value = false;
+    window.location.href = '/';
+  }
+
+
+
 </script>
 
 <style scoped>

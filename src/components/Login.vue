@@ -67,11 +67,13 @@
             password: password.value,
         })
         if (!error) {
-            router.push('/');
+            window.location.href = '/';
         } else {
             dialog.value = true;
         }
     }
+
+
 </script>
 
 
