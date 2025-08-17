@@ -55,9 +55,19 @@
     }
   }
 
+
+  /*
+
   renderer.paragraph = function (text) {
+    console.log(text);
     return `<p style='padding: 5px'>${text.text}</p>`
   }
+
+  */
+
+
+
+
 
   renderer.listitem = function (text) {
     return `・${text.text}<br>`;
@@ -137,7 +147,5 @@
     font-size: 1.3em;
     padding: 10px;
   }
-
-
 
 </style>
