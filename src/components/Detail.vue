@@ -3,11 +3,20 @@
     <v-card-item>
       <v-card-title class="title">タイトル</v-card-title>
       <v-card-subtitle class="date">投稿日：2025/08/16</v-card-subtitle>
+      <div class="d-flex justify-end">
+        <v-btn variant="text">
+          <v-icon>mdi-pencil</v-icon>
+        </v-btn>
+        <v-btn variant="text">
+          <v-icon>mdi-delete</v-icon>
+        </v-btn>
+      </div>
     </v-card-item>
     <v-card-text>
       <div class="detail" v-html="marked(text)"></div>
     </v-card-text>
   </v-card>
+
 </template>
 
 <script setup>
