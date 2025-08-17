@@ -106,12 +106,24 @@
         const todayText = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
         dialog.value = false;
 
-        const { data, error } = await supabase
-            .from('blog')
-            .insert([
-                { created_at: todayText, title: blog.value.title, text: blog.value.text },
-            ])
-            .select()
+        if (detailId == 0) {
+            const { data, error } = await supabase
+                .from('blog')
+                .insert([
+                    { created_at: todayText, title: blog.value.title, text: blog.value.text },
+                ])
+                .select()
+        } else {
+            const { data, error } = await supabase
+                .from('blog')
+                .update({ title: blog.value.title, text: blog.value.text })
+                .eq('id', detailId)
+                .select()
+
+            console.log(error);
+        }
+
+
 
         window.location.href = '/';
 
