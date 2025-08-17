@@ -12,6 +12,7 @@
         <v-card-text>
           本文の内容が記述される．
         </v-card-text>
+
       </v-card>
 
     </v-col>
