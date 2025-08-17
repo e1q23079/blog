@@ -7,7 +7,7 @@
         <v-btn variant="text">
           <v-icon>mdi-pencil</v-icon>
         </v-btn>
-        <v-btn variant="text">
+        <v-btn variant="text" @click="del">
           <v-icon>mdi-delete</v-icon>
         </v-btn>
       </div>
@@ -17,6 +17,22 @@
     </v-card-text>
   </v-card>
 
+  <v-dialog v-model="dialog" max-width="400" persistent>
+    <v-card prepend-icon="mdi-check" text="本当に削除しますか？" title="確認">
+      <template v-slot:actions>
+        <v-spacer></v-spacer>
+
+        <v-btn @click="dialog = false">
+          いいえ
+        </v-btn>
+
+        <v-btn @click="dialog = false">
+          はい
+        </v-btn>
+      </template>
+    </v-card>
+  </v-dialog>
+
 </template>
 
 <script setup>
@@ -25,6 +41,15 @@
 
   const route = useRoute();
   const detailId = route.params.id;
+
+
+  import { ref } from 'vue'
+
+  const dialog = ref(false);
+
+  const del = () => {
+    dialog.value = true;
+  }
 
   const text = `
 # h1
@@ -72,6 +97,7 @@
 `
 
 </script>
+
 
 <style scoped>
   .title {
