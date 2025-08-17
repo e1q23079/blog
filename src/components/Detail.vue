@@ -47,12 +47,16 @@
 
   renderer.heading = function (text) {
     if (text.depth == 1) {
-      return `<h1><span className='section' style='color:  #8ED973;'>|</span> ${text.text}</h1><hr>`
+      return `<h1 style='padding: 5px'><span className='section' style='color:  #8ED973; padding: 10px'>|</span> ${text.text}</h1><hr>`
     } else if (text.depth == 2) {
-      return `<h2><span className='section' style='color:  #8ED973;'>|</span> ${text.text}</h2>`
+      return `<h2 style='padding: 5px'><span className='section' style='color:  #8ED973;'>|</span> ${text.text}</h2>`
     } else {
       return `<h${text.depth}>${text.text}</h${text.depth}>`;
     }
+  }
+
+  renderer.paragraph = function (text) {
+    return `<p style='padding: 5px'>${text.text}</p>`
   }
 
   renderer.listitem = function (text) {
