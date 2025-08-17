@@ -3,7 +3,7 @@
         <v-card-item>
             <v-text-field variant="underlined" label="タイトル"></v-text-field>
             <v-card-subtitle class="date">投稿日：2025/08/16</v-card-subtitle>
-            <v-textarea label="記事" counter variant="underlined"></v-textarea>
+            <v-textarea label="記事" counter variant="underlined" rows="11"></v-textarea>
             <div class="d-flex justify-end">
                 <v-btn-group>
                     <v-btn>取り消し</v-btn>
