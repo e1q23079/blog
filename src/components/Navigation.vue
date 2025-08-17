@@ -27,12 +27,12 @@
 
 
         <v-list>
-          <v-list-item to="/login">
+          <v-list-item to="/login" v-if="userName == '未ログイン'">
             <v-list-item-title>
               <div role="button">ログイン</div>
             </v-list-item-title>
           </v-list-item>
-          <v-list-item @click="signOut">
+          <v-list-item @click="signOut" v-else>
             <v-list-item-title>
               <div role="button">ログアウト</div>
             </v-list-item-title>
