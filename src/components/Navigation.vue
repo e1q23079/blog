@@ -40,7 +40,7 @@
     </v-app-bar>
 
     <v-navigation-drawer v-model="open" temporary :scrim="false">
-      <v-list-item title="Q23079's blog" subtitle="未ログイン"></v-list-item>
+      <v-list-item title="Q23079's blog" :subtitle="userName"></v-list-item>
       <v-divider></v-divider>
       <v-list-item link title="Top" to="/" @click="open = false"></v-list-item>
       <v-list-item link title="Portfolio" href="https://e1q23079.github.io/portfolio"
@@ -55,7 +55,21 @@
 
 <script setup>
   import { shallowRef } from 'vue'
-  import { fa } from 'vuetify/locale';
+
+  import { ref, onMounted } from 'vue';
+
+  import { supabase } from '../../utils/supabase';
+
+  const userName = ref("未ログイン");
+
+  async function getUser() {
+    const { data: data, error } = await supabase.auth.getUser();
+    userName.value = data['user']['email'];
+  }
+
+  onMounted(() => {
+    getUser();
+  })
 
   const open = shallowRef(false)
 </script>
