@@ -1,24 +1,17 @@
 <template>
-  <v-row>
+  <v-row v-for="detail in blogs">
 
     <v-col>
       <v-card link>
         <v-card-item>
-          <v-card-title>タイトル</v-card-title>
+          <v-card-title>{{ detail.title }}</v-card-title>
 
-          <v-card-subtitle>投稿日：2025/08/16</v-card-subtitle>
+          <v-card-subtitle>投稿日：{{ detail.created_at }}</v-card-subtitle>
         </v-card-item>
 
         <v-card-text>
-          本文の内容が記述される．
+          {{ detail.text }}
         </v-card-text>
-
-        <h1>テスト{{ blogs }}</h1>
-
-        <br></br>
-
-        <h3 v-for="dt in blogs" :key="dt.id">{{ dt.title }}</h3>
-
 
       </v-card>
 
