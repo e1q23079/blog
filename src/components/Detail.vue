@@ -52,7 +52,6 @@
     dialog.value = true;
   }
 
-  const text = "こんにちは";
 
   import { onMounted } from 'vue';
   import { supabase } from '../../utils/supabase';
