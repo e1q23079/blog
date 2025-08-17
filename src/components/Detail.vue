@@ -4,7 +4,7 @@
       <v-card-title class="title">{{ blog.title }}</v-card-title>
       <v-card-subtitle class="date">投稿日：{{ blog.created_at }}</v-card-subtitle>
       <div class="d-flex justify-end" v-if="userName">
-        <v-btn variant="text">
+        <v-btn variant="text" :to="`/editer/${blog.id}`">
           <v-icon>mdi-pencil</v-icon>
         </v-btn>
         <v-btn variant="text" @click="del">
