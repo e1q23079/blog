@@ -10,7 +10,7 @@
 
       <v-app-bar-title class="title">Q23079's blog</v-app-bar-title>
 
-      <v-btn style="color: white; font-weight: bold;" variant="tonal" v-if="userName != '未ログイン'" to="/editer/0">
+      <v-btn style="color: white; font-weight: bold;" variant="tonal" v-if="userName != '未ログイン'" @click="make">
         作成
       </v-btn>
 
@@ -112,6 +112,10 @@
   const click = () => {
     dialog.value = false;
     window.location.href = '/';
+  }
+
+  const make = () => {
+    window.location.href = '/editer/0'
   }
 
 
