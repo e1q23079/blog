@@ -22,7 +22,7 @@
                     いいえ
                 </v-btn>
 
-                <v-btn @click="dialog = false">
+                <v-btn @click="publish">
                     はい
                 </v-btn>
             </template>
@@ -88,7 +88,9 @@
     async function getBlog() {
         const { data: data, error } = await supabase.from('blog').select().eq('id', detailId).maybeSingle();
         if (detailId == 0) {
-            const temp = new Detail({ id: 0, created_at: "", title: "", text: "" });
+            const today = new Date();
+            const todayText = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
+            const temp = new Detail({ id: 0, created_at: todayText, title: "", text: "" });
             blog.value = temp;
         } else if (error) {
             router.push('/notfound');
@@ -96,6 +98,22 @@
             const temp = new Detail({ id: data.id, created_at: data.created_at, title: data.title, text: data.text });
             blog.value = temp;
         }
+    }
+
+    async function publish() {
+        const today = new Date();
+        const todayText = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
+        dialog.value = false;
+
+        /*
+        const { data, error } = await supabase
+            .from('blog')
+            .insert([
+                { created_at: todayText, title: blog.title, text: blog.text },
+            ])
+            .select()
+        */
+        console.log(todayText, blog.value.title, blog.value.text);
     }
 
     onMounted(() => {
