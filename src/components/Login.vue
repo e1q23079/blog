@@ -25,6 +25,20 @@
             </v-form>
         </v-card>
     </div>
+
+
+    <v-dialog v-model="dialog" max-width="400" persistent>
+        <v-card prepend-icon="mdi-check" text="ログインに失敗しました．" title="エラー">
+            <template v-slot:actions>
+                <v-spacer></v-spacer>
+                <v-btn @click="dialog = false">
+                    閉じる
+                </v-btn>
+            </template>
+        </v-card>
+    </v-dialog>
+
+
 </template>
 
 
@@ -32,6 +46,9 @@
     import { ref } from 'vue'
 
     import { supabase } from '../../utils/supabase';
+    import { useRouter } from 'vue-router';
+
+
 
     const form = ref(false)
     const userName = ref(null)
@@ -39,15 +56,20 @@
 
     const visible = ref(false)
 
+    const dialog = ref(false);
+
+    const router = useRouter();
+
+
     async function onSubmit() {
         const { data, error } = await supabase.auth.signInWithPassword({
             email: userName.value,
             password: password.value,
         })
         if (!error) {
-            console.log("ログイン成功");
+            router.push('/');
         } else {
-            console.log("ログイン失敗");
+            dialog.value = true;
         }
     }
 </script>
