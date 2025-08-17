@@ -10,7 +10,7 @@
         </v-card-item>
 
         <v-card-text>
-          {{ `${detail.text.substring(0, 100)}...` }}
+          {{ `${marked(detail.text.substring(0, 300))}...` }}
         </v-card-text>
 
       </v-card>
@@ -23,7 +23,7 @@
 
 <script setup>
 
-  import { ref, onMounted } from 'vue';
+  import { ref, onMounted, render } from 'vue';
   import { supabase } from '../../utils/supabase';
 
   const blogs = ref([]);
@@ -36,6 +36,39 @@
   onMounted(() => {
     getBlog();
   })
+
+
+  import { marked } from 'marked';
+
+  const renderer = new marked.Renderer();
+
+  renderer.heading = function (text) {
+    return `${text.text}`;
+  }
+
+  renderer.listitem = function (text) {
+    return `${text.text}`;
+  }
+
+  renderer.strong = function (text) {
+    return `${text.text}`;
+  }
+
+  renderer.code = function (text) {
+    return `${text.text}`;
+  }
+
+  renderer.paragraph = function (text) {
+    return `${text.text}`;
+  }
+
+  renderer.list = function (text) {
+    return "";
+  }
+
+
+
+  marked.setOptions({ renderer });
 </script>
 
 <style scoped></style>
