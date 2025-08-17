@@ -3,7 +3,7 @@
     <v-card-item>
       <v-card-title class="title">{{ blog.title }}</v-card-title>
       <v-card-subtitle class="date">投稿日：{{ blog.created_at }}</v-card-subtitle>
-      <div class="d-flex justify-end">
+      <div class="d-flex justify-end" v-if="userName">
         <v-btn variant="text">
           <v-icon>mdi-pencil</v-icon>
         </v-btn>
@@ -71,7 +71,19 @@
 
   onMounted(() => {
     getBlog();
+    getUser();
   })
+
+  const userName = ref(false);
+
+  async function getUser() {
+    const { data: data, error } = await supabase.auth.getUser();
+    if (data['user']) {
+      userName.value = true;
+    } else {
+      userName.value = false;
+    }
+  }
 
 </script>
 
