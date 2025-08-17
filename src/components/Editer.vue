@@ -6,7 +6,7 @@
             <v-textarea label="記事" counter variant="underlined" rows="11" v-model="blog.text"></v-textarea>
             <div class="d-flex justify-end">
                 <v-btn-group>
-                    <v-btn>取り消し</v-btn>
+                    <v-btn @click="reset">取り消し</v-btn>
                     <v-btn @click="save">公開</v-btn>
                 </v-btn-group>
             </div>
@@ -23,6 +23,22 @@
                 </v-btn>
 
                 <v-btn @click="dialog = false">
+                    はい
+                </v-btn>
+            </template>
+        </v-card>
+    </v-dialog>
+
+    <v-dialog v-model="dialog2" max-width="400" persistent>
+        <v-card prepend-icon="mdi-check" text="本当に取り消しますか？" title="確認">
+            <template v-slot:actions>
+                <v-spacer></v-spacer>
+
+                <v-btn @click="dialog2 = false">
+                    いいえ
+                </v-btn>
+
+                <v-btn @click="dialog2 = false">
                     はい
                 </v-btn>
             </template>
@@ -45,8 +61,14 @@
 
     const dialog = ref(false);
 
+    const dialog2 = ref(false);
+
     const save = () => {
         dialog.value = true;
+    }
+
+    const reset = () => {
+        dialog2.value = true;
     }
 
     import { onMounted } from 'vue';
