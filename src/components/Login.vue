@@ -1,6 +1,6 @@
 <template>
     <div class="center">
-        <v-card class="mx-auto pa-12 pb-8" elevation="8" max-width="448" rounded="lg">
+        <v-card class="mx-auto pa-3 pb-0" elevation="0" max-width="448" rounded="lg">
 
             <v-form v-model="form" @submit.prevent="onSubmit">
 
@@ -46,6 +46,6 @@
 
 <style scoped>
     .center {
-        padding: 10vh;
+        padding-top: 15vh;
     }
 </style>
