@@ -2,7 +2,7 @@
   <v-row>
 
     <v-col>
-      <v-card>
+      <v-card link>
         <v-card-item>
           <v-card-title>タイトル</v-card-title>
 
@@ -21,6 +21,4 @@
 <script>
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
