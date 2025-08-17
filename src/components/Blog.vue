@@ -29,7 +29,7 @@
   const blogs = ref([]);
 
   async function getBlog() {
-    const { data: data, error } = await supabase.from('blog').select();
+    const { data: data, error } = await supabase.from('blog').select().order('id', { ascending: false });
     blogs.value = data;
   }
 
