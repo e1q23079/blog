@@ -30,7 +30,6 @@
 
   async function getBlog() {
     const { data: data, error } = await supabase.from('blog').select();
-    console.log(data, error);
     blogs.value = data;
   }
 

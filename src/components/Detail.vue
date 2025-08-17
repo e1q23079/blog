@@ -1,8 +1,8 @@
 <template>
   <v-card>
     <v-card-item>
-      <v-card-title class="title">タイトル</v-card-title>
-      <v-card-subtitle class="date">投稿日：2025/08/16</v-card-subtitle>
+      <v-card-title class="title">{{ blog.title }}</v-card-title>
+      <v-card-subtitle class="date">投稿日：{{ blog.created_at }}</v-card-subtitle>
       <div class="d-flex justify-end">
         <v-btn variant="text">
           <v-icon>mdi-pencil</v-icon>
@@ -13,7 +13,7 @@
       </div>
     </v-card-item>
     <v-card-text>
-      <div class="detail" v-html="marked(text)"></div>
+      <div class="detail" v-html="blog.text"></div>
     </v-card-text>
   </v-card>
 
@@ -51,50 +51,23 @@
     dialog.value = true;
   }
 
-  const text = `
-# h1
-## h2
-### h3
-#### h4
-本文を記載
-文章を入力している．
+  const text = "こんにちは";
 
-文章を入力している．
-文章を入力している．
+  import { onMounted } from 'vue';
+  import { supabase } from '../../utils/supabase';
 
-文章を入力している．
-文章を入力している．
+  const blog = ref([]);
 
-文章を入力している．
-文章を入力している．
+  async function getBlog() {
+    const { data: data, error } = await supabase.from('blog').select().eq('id', detailId).single();
+    console.log(data, error);
+    data.text = marked(data.text);
+    blog.value = data;
+  }
 
-文章を入力している．
-文章を入力している．
-
-文章を入力している．
-文章を入力している．
-
-文章を入力している．
-文章を入力している．
-
-文章を入力している．
-文章を入力している．
-
-文章を入力している．
-文章を入力している．
-
-文章を入力している．
-
-
-文章を入力している．
-章を入力している．
-
-文章を入力している．
-
-
-文章を入力している．
-
-`
+  onMounted(() => {
+    getBlog();
+  })
 
 </script>
 
