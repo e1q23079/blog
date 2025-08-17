@@ -123,17 +123,18 @@
             console.log(error);
         }
 
-
-
         window.location.href = '/';
-
-        console.log("送信");
     }
 
     const cancel = () => {
         dialog.value = false;
 
-        window.location.href = `/detail/${detailId}`;
+        if (detailId == 0) {
+            window.location.href = '/';
+        } else {
+            window.location.href = `/detail/${detailId}`;
+
+        }
     }
 
     onMounted(() => {
