@@ -34,7 +34,7 @@
 
     </v-app-bar>
 
-    <v-navigation-drawer v-model="open">
+    <v-navigation-drawer v-model="open" temporary>
       <v-list-item title="Q23079's blog" subtitle="未ログイン"></v-list-item>
       <v-divider></v-divider>
       <v-list-item link title="Top" to="/" @click="open = false"></v-list-item>
