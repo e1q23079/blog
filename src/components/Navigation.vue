@@ -10,7 +10,7 @@
 
       <v-app-bar-title class="title">Q23079's blog</v-app-bar-title>
 
-      <v-btn style="color: white; font-weight: bold;" variant="tonal" v-if="userName != '未ログイン'" @click="make">
+      <v-btn style="color: white; font-weight: bold;" variant="tonal" v-if="userName != 'ゲストユーザ'" @click="make">
         作成
       </v-btn>
 
@@ -29,7 +29,7 @@
         </template>
 
         <v-list>
-          <v-list-item to="/login" v-if="userName == '未ログイン'">
+          <v-list-item to="/login" v-if="userName == 'ゲストユーザ'">
             <v-list-item-title>
               <div role="button">ログイン</div>
             </v-list-item-title>
@@ -85,14 +85,14 @@
 
   const dialog = ref(false);
 
-  const userName = ref("未ログイン");
+  const userName = ref("ゲストユーザ");
 
   async function getUser() {
     const { data: data, error } = await supabase.auth.getUser();
     if (data['user']) {
       userName.value = data['user']['email'];
     } else {
-      userName.value = "未ログイン";
+      userName.value = "ゲストユーザ";
     }
 
   }
