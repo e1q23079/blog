@@ -11,9 +11,14 @@
       <v-app-bar-title class="title">Q23079's blog</v-app-bar-title>
 
 
-
+      <!--
+      <v-list-item prepend-avatar="https://randomuser.me/api/portraits/men/78.jpg">
+        <v-list-item-title style="color: white;font-weight: bold;">Q23079</v-list-item-title>
+      </v-list-item>
+      -->
 
       <v-menu>
+
 
         <template v-slot:activator="{ props }">
           <v-btn icon="mdi-dots-vertical" variant="text" v-bind="props" color="#FFFFFF"></v-btn>
