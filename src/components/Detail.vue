@@ -37,9 +37,10 @@
 
 <script setup>
   import { marked } from 'marked';
-  import { useRoute } from 'vue-router';
+  import { useRoute, useRouter } from 'vue-router';
 
   const route = useRoute();
+  const router = useRouter();
   const detailId = route.params.id;
 
 
@@ -60,9 +61,12 @@
 
   async function getBlog() {
     const { data: data, error } = await supabase.from('blog').select().eq('id', detailId).single();
-    console.log(data, error);
-    data.text = marked(data.text);
-    blog.value = data;
+    if (error) {
+      router.push('/notfound');
+    } else {
+      data.text = marked(data.text);
+      blog.value = data;
+    }
   }
 
   onMounted(() => {
