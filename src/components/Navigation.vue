@@ -10,7 +10,7 @@
 
       <v-app-bar-title class="title">Q23079's blog</v-app-bar-title>
 
-      <v-btn style="color: white; font-weight: bold;" variant="tonal" v-if="userName != '未ログイン'">
+      <v-btn style="color: white; font-weight: bold;" variant="tonal" v-if="userName != '未ログイン'" to="/editer/0">
         作成
       </v-btn>
 
