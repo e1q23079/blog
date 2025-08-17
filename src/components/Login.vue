@@ -31,16 +31,25 @@
 <script setup>
     import { ref } from 'vue'
 
+    import { supabase } from '../../utils/supabase';
+
     const form = ref(false)
     const userName = ref(null)
     const password = ref(null)
 
     const visible = ref(false)
 
-    function onSubmit() {
-        console.log(userName.value, password.value)
+    async function onSubmit() {
+        const { data, error } = await supabase.auth.signInWithPassword({
+            email: userName.value,
+            password: password.value,
+        })
+        if (!error) {
+            console.log("ログイン成功");
+        } else {
+            console.log("ログイン失敗");
+        }
     }
-
 </script>
 
 
