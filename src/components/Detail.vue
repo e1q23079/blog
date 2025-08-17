@@ -26,7 +26,7 @@
           いいえ
         </v-btn>
 
-        <v-btn @click="dialog = false">
+        <v-btn @click="delDo">
           はい
         </v-btn>
       </template>
@@ -83,6 +83,16 @@
     } else {
       userName.value = false;
     }
+  }
+
+  async function delDo() {
+    dialog.value = false;
+    const { error } = await supabase
+      .from('blog')
+      .delete()
+      .eq('id', detailId);
+
+    window.location.href = '/';
   }
 
 </script>
