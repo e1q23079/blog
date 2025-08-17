@@ -73,7 +73,7 @@
 
     import { onMounted } from 'vue';
     import { supabase } from '../../utils/supabase';
-    import { fa } from 'vuetify/locale';
+
 
     const blog = ref([]);
 
@@ -133,7 +133,7 @@
     const cancel = () => {
         dialog.value = false;
 
-        router.push('/');
+        window.location.href = `/detail/${detailId}`;
     }
 
     onMounted(() => {
