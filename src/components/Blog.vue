@@ -10,7 +10,7 @@
         </v-card-item>
 
         <v-card-text>
-          {{ detail.text }}
+          {{ `${detail.text.substring(0, 100)}...` }}
         </v-card-text>
 
       </v-card>
