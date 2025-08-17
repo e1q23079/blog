@@ -4,9 +4,9 @@
 
             <v-form v-model="form" @submit.prevent="onSubmit">
 
-                <div class="text-subtitle-1 text-medium-emphasis">UserName</div>
+                <div class="text-subtitle-1 text-medium-emphasis">E-mail</div>
 
-                <v-text-field v-model="userName" density="compact" placeholder="Enter your UserName"
+                <v-text-field v-model="userName" density="compact" placeholder="Enter your e-mail"
                     prepend-inner-icon="mdi-email-outline" variant="outlined"></v-text-field>
 
                 <div class="text-subtitle-1 text-medium-emphasis d-flex align-center justify-space-between">
