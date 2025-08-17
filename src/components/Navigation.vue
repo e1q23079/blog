@@ -10,6 +10,10 @@
 
       <v-app-bar-title class="title">Q23079's blog</v-app-bar-title>
 
+      <v-btn style="color: white; font-weight: bold;" variant="tonal" v-if="userName != '未ログイン'">
+        作成
+      </v-btn>
+
 
       <!--
       <v-list-item prepend-avatar="https://randomuser.me/api/portraits/men/78.jpg">
@@ -23,8 +27,6 @@
         <template v-slot:activator="{ props }">
           <v-btn icon="mdi-dots-vertical" variant="text" v-bind="props" color="#FFFFFF"></v-btn>
         </template>
-
-
 
         <v-list>
           <v-list-item to="/login" v-if="userName == '未ログイン'">
