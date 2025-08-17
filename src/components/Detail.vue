@@ -60,7 +60,7 @@
   const blog = ref([]);
 
   async function getBlog() {
-    const { data: data, error } = await supabase.from('blog').select().eq('id', detailId).single();
+    const { data: data, error } = await supabase.from('blog').select().eq('id', detailId).maybeSingle();
     if (error) {
       router.push('/notfound');
     } else {

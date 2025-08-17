@@ -64,7 +64,7 @@
     }
 
     async function getBlog() {
-        const { data: data, error } = await supabase.from('blog').select().eq('id', detailId).single();
+        const { data: data, error } = await supabase.from('blog').select().eq('id', detailId).maybeSingle();
         if (detailId == 0) {
             const temp = new Detail({ id: 0, created_at: "", title: "", text: "" });
             blog.value = temp;
