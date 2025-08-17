@@ -2,7 +2,7 @@
   <v-row v-for="detail in blogs">
 
     <v-col>
-      <v-card link>
+      <v-card link :to="`/detail/${detail.id}`">
         <v-card-item>
           <v-card-title>{{ detail.title }}</v-card-title>
 
