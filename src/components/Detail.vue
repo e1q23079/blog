@@ -86,7 +86,7 @@
 
   renderer.image = function (text) {
     console.log(text);
-    return `<div><img src=${text.href} style='width: 80vw;' alt='写真'></img></div>`;
+    return `<div><img src=${text.href} style='width: 80vw;' alt='${text.text ? text.text : "画像"}'></img></div>`;
   }
 
   renderer.link = function (text) {
