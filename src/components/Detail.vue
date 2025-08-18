@@ -89,6 +89,10 @@
     return `<div><img src=${text.href} style='width: 80vw;' alt='写真'></img></div>`;
   }
 
+  renderer.link = function (text) {
+    return `<a href=${text.href} target='_blank' rel='noreferrer'>${text.text}</a>`;
+  }
+
   marked.setOptions({ renderer });
 
 
@@ -103,6 +107,7 @@
 
   import { onMounted } from 'vue';
   import { supabase } from '../../utils/supabase';
+
 
   const blog = ref([]);
 
