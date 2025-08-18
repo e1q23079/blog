@@ -1,5 +1,5 @@
 <template>
-    <div className="center">
+    <div className="center color">
         <img src=@/assets/icon.png width='200px' alt='icon'></img>
         <p className='notFound'>Forbidden</p>
         <p className='message'>アクセス権限がありません．</p>
@@ -27,5 +27,9 @@
 
     .message {
         font-size: large;
+    }
+
+    .color {
+        color: #0E2841;
     }
 </style>

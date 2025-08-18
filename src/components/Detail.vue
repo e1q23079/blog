@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card class="card">
     <v-card-item>
       <v-card-title class="title">{{ blog.title }}</v-card-title>
       <v-card-subtitle class="date">投稿日：{{ blog.created_at }}</v-card-subtitle>
@@ -168,6 +168,11 @@
 </style>
 
 <style>
+
+  .card {
+    color: #0E2841;
+  }
+
   p {
     padding: 10px;
   }

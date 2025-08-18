@@ -1,7 +1,7 @@
 <template>
-    <v-footer class="align-center justify-center" color="surface-light" app>
-        <div className='copyRight'>©{{ yearText }} Q23079 All Rights Reserved.</div>
-    </v-footer>
+  <v-footer class="align-center justify-center copyRight" color="surface-light" app>
+    <div className='copyRight'>©{{ yearText }} Q23079 All Rights Reserved.</div>
+  </v-footer>
 </template>
 
 <script setup>
@@ -19,6 +19,7 @@
 </script>
 
 <style scoped>
-
+  .copyRight {
+    color: #0E2841;
+  }
 </style>
-

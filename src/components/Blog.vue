@@ -2,7 +2,7 @@
   <v-row v-for="detail in blogs">
 
     <v-col>
-      <v-card link :to="`/detail/${detail.id}`">
+      <v-card link :to="`/detail/${detail.id}`" class="blog">
         <v-card-item>
           <v-card-title>{{ detail.title }}</v-card-title>
 
@@ -72,3 +72,9 @@
 </script>
 
 <style scoped></style>
+
+<style>
+  .blog {
+    color: #0E2841;
+  }
+</style>

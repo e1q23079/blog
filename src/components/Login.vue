@@ -81,4 +81,8 @@
     .center {
         padding-top: 15vh;
     }
+
+    .color {
+        color: #0E2841;
+    }
 </style>

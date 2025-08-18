@@ -28,7 +28,7 @@
           <v-btn icon="mdi-dots-vertical" variant="text" v-bind="props" color="#FFFFFF"></v-btn>
         </template>
 
-        <v-list>
+        <v-list class="color">
           <v-list-item to="/login" v-if="userName == 'ゲストユーザ'">
             <v-list-item-title>
               <div role="button">ログイン</div>
@@ -47,7 +47,7 @@
 
     </v-app-bar>
 
-    <v-navigation-drawer v-model="open" temporary :scrim="false">
+    <v-navigation-drawer class="color" v-model="open" temporary :scrim="false">
       <v-list-item title="Q23079's blog" :subtitle="userName"></v-list-item>
       <v-divider></v-divider>
       <v-list-item link title="Top" to="/" @click="open = false"></v-list-item>
@@ -126,5 +126,9 @@
   .title {
     color: white;
     font-weight: bold;
+  }
+
+  .color {
+    color: #0E2841;
   }
 </style>
