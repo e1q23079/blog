@@ -78,7 +78,7 @@
   }
 
   renderer.code = function (text) {
-    // console.log(text.raw);
+    // console.log(text);
     const highlightCode = hljs.highlightAuto(text.text);
     // return `<pre><code class='hljs' style='background-color: rgb(182, 224, 159);' > ${highlightCode.value}</code ></pre> `
     return `<pre><code class='hljs' style='background-color: #F2F2F2;' >${highlightCode.value}</code ></pre> `
