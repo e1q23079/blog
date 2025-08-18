@@ -161,4 +161,21 @@
   p {
     padding: 10px;
   }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    border: solid 1.5px;
+    border-color: rgb(152, 152, 152);
+    padding: 5px;
+  }
+
+  th {
+    background-color: aliceblue;
+
+  }
+
 </style>
