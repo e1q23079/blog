@@ -39,6 +39,10 @@
   import { marked } from 'marked';
   import { useRoute, useRouter } from 'vue-router';
 
+  import hljs from 'highlight.js';
+
+  import 'highlight.js/styles/github.css'
+
   const route = useRoute();
   const router = useRouter();
   const detailId = route.params.id;
@@ -74,7 +78,10 @@
   }
 
   renderer.code = function (text) {
-    return `<code style='background-color: rgb(182, 224, 159);' > ${text.text}</code > `
+    // console.log(text.raw);
+    const highlightCode = hljs.highlightAuto(text.text);
+    // return `<pre><code class='hljs' style='background-color: rgb(182, 224, 159);' > ${highlightCode.value}</code ></pre> `
+    return `<pre><code class='hljs' style='background-color: #E7E6E6;' > ${highlightCode.value}</code ></pre> `
   }
 
   marked.setOptions({ renderer });

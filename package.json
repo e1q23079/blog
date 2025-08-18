@@ -15,6 +15,7 @@
     "@fontsource/roboto": "5.2.6",
     "@mdi/font": "7.4.47",
     "@supabase/supabase-js": "^2.55.0",
+    "highlight.js": "^11.11.1",
     "marked": "^16.1.2",
     "supabase": "^2.34.3",
     "vue": "^3.5.17",
