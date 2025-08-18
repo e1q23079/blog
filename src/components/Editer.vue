@@ -116,7 +116,7 @@
     // 公開
     async function publish() {
         const today = new Date();   // 日付取得
-        const todayText = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;  // 体裁調整
+        const todayText = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;  // 体裁調整
         dialog.value = false;   // ダイアログを閉じる
 
         if (detailId == 0) {
