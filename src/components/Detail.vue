@@ -84,6 +84,11 @@
     return `<pre><code class='hljs' style='background-color: #F2F2F2;' >${highlightCode.value}</code ></pre> `
   }
 
+  renderer.image = function (text) {
+    console.log(text);
+    return `<div><img src=${text.href} style='width: 80vw;' alt='写真'></img></div>`;
+  }
+
   marked.setOptions({ renderer });
 
 
