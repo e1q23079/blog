@@ -123,7 +123,13 @@
             console.log(error);
         }
 
-        window.location.href = '/';
+        if (detailId == 0) {
+            window.location.href = '/';
+        } else {
+            window.location.href = `/detail/${detailId}`;
+        }
+
+
     }
 
     const cancel = () => {
