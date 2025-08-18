@@ -100,7 +100,7 @@
         if (detailId == 0) {
             // 新規作成時
             const today = new Date();   // 現在の日付を取得
-            const todayText = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;  // 日付体裁調整
+            const todayText = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;  // 日付体裁調整
             const temp = new Detail({ id: 0, created_at: todayText, title: "", text: "" }); // データ作成
             blog.value = temp;
         } else if (error) {
