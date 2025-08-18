@@ -149,3 +149,9 @@
   }
 
 </style>
+
+<style>
+  p {
+    padding: 10px;
+  }
+</style>
