@@ -1,4 +1,5 @@
 <template>
+    <!-- Notfound -->
     <div className="center color">
         <img src=@/assets/icon.png width='200px' alt='icon'></img>
         <p className='notFound'>Not Found</p>
@@ -29,6 +30,7 @@
         font-size: large;
     }
 
+    /* 文字色 */
     .color {
         color: #0E2841;
     }

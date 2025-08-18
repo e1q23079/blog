@@ -1,4 +1,28 @@
-# Vuetify (Default)
+# Q23079's blog
+
+## 起動
+### 開発環境（ローカル）
+```
+npm run dev
+```
+### 開発環境（ネットワーク）
+```
+npm run start
+```
+### ビルド
+```
+npm run build
+```
+
+## 環境変数
+```
+# Supabase URL
+VITE_SUPABASE_URL
+# Supabase API Key
+VITE_SUPABASE_KEY
+```
+
+## Vuetify (Default)
 
 This is the official scaffolding tool for Vuetify, designed to give you a head start in building your new Vuetify application. It sets up a base template with all the necessary configurations and standard directory structure, enabling you to begin development without the hassle of setting up the project from scratch.
 

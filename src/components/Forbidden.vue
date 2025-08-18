@@ -1,4 +1,5 @@
 <template>
+    <!-- FOrbidden -->
     <div className="center color">
         <img src=@/assets/icon.png width='200px' alt='icon'></img>
         <p className='notFound'>Forbidden</p>
@@ -11,6 +12,7 @@
 </script>
 
 <style scoped>
+
     .center {
         min-height: 80vh;
         display: flex;
@@ -29,6 +31,7 @@
         font-size: large;
     }
 
+    /* カラー */
     .color {
         color: #0E2841;
     }
