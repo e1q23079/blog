@@ -61,7 +61,7 @@
     <v-card prepend-icon="mdi-check" text="ログアウトしました．" title="情報">
       <template v-slot:actions>
         <v-spacer></v-spacer>
-        <v-btn to="/" @click="click">
+        <v-btn @click="click">
           閉じる
         </v-btn>
       </template>
