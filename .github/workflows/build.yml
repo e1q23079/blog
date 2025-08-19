@@ -31,7 +31,7 @@ jobs:
 
       # Package install
       - name: Package install
-        uses: npm install
+        run: npm install
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
