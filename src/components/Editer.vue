@@ -62,7 +62,7 @@
     // ルーター
     const router = useRouter();
     // 記事idをURLから取得
-    const detailId = route.params.id;
+    const detailId = Number.parseInt(route.params.id);
 
     // 公開確認ダイアログ
     const dialog = ref(false);
@@ -97,7 +97,7 @@
     async function getBlog() {
         // idに一致する記事を取得
         const { data: data, error } = await supabase.from('blog').select().eq('id', detailId).maybeSingle();
-        if (detailId == 0) {
+        if (detailId === 0) {
             // 新規作成時
             const today = new Date();   // 現在の日付を取得
             const todayText = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;  // 日付体裁調整
@@ -119,7 +119,7 @@
         const todayText = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;  // 体裁調整
         dialog.value = false;   // ダイアログを閉じる
 
-        if (detailId == 0) {
+        if (detailId === 0) {
             // 新規作成
             /* 記事をデータベースに追加 */
             const { data, error } = await supabase
@@ -140,7 +140,7 @@
         }
 
         // 画面遷移
-        if (detailId == 0) {
+        if (detailId === 0) {
             // 新規作成時：トップに戻る
             window.location.href = '/';
         } else {
@@ -154,7 +154,7 @@
     const cancel = () => {
         dialog.value = false;   // ダイアログを閉じる
 
-        if (detailId == 0) {
+        if (detailId === 0) {
             // 新規作成時：トップに戻る
             window.location.href = '/';
         } else {

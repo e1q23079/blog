@@ -28,7 +28,7 @@
         <!-- ボタン -->
         <v-list class="color">
           <!-- 認証前：ログインボタンを表示 -->
-          <v-list-item to="/login" v-if="userName == 'ゲストユーザ'">
+          <v-list-item to="/login" v-if="userName === 'ゲストユーザ'">
             <v-list-item-title>
               <div role="button">ログイン</div>
             </v-list-item-title>

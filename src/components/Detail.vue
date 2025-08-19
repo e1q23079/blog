@@ -60,9 +60,9 @@
 
   // h1タグ
   renderer.heading = function (text) {
-    if (text.depth == 1) {
+    if (text.depth === 1) {
       return `<h1 style='padding: 5px'><span className='section' style='color:  #8ED973; padding: 10px'>|</span> ${text.text}</h1><hr><br>`
-    } else if (text.depth == 2) {
+    } else if (text.depth === 2) {
       return `<h2 style='padding: 5px'><span className='section' style='color:  #8ED973;'>|</span> ${text.text}</h2>`
     } else {
       return `<h${text.depth}>${text.text}</h${text.depth}>`;
