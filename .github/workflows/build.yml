@@ -37,6 +37,6 @@ jobs:
       - name: Run a one-line script
         run: echo building...
 
-      # Runs a test script
-      - name: Run a test script
-        run: npm run test
+      # Runs a build
+      - name: Run a build
+        run: npm run build
